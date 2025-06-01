@@ -1,0 +1,78 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+venv/
+env/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+media/
+staticfiles/
+*.mo
+*.swp
+.DS_Store
+
+# dotenv
+.env
+
+# Migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# IDE settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Docker
+*.pid
+*.log
+docker-compose.override.yml
+.env.docker
+
+# macOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Node.js (if applicable, for frontend assets in your project)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build files
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# Test and coverage results
+coverage.xml
+*.cover
+
+# Kubernetes and Helm files
+*.yaml
+
+# Python egg cache
+.eggs/
