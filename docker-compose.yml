@@ -3,12 +3,12 @@ version: "3.8"
 services:
   db:
     image: postgres:15
-    container_name: postgres_db
+    container_name: event_postgres_db
     restart: always
     env_file:
       - /.env
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - event_postgres_db:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -34,4 +34,4 @@ services:
       - /.env
 
 volumes:
-  postgres_data:
+  event_postgres_db:

@@ -84,31 +84,15 @@ class LoginSerializer(TokenObtainPairSerializer):
         )
         # data.save()
         # Add additional user data
-        if user.role:
-            data.update(
-                {
-                    "email": user.email,
-                    "first_name": user.first_name,
-                    "last_name": user.last_name,
-                    "address": user.address.id if user.address else None,
-                    "address_name": user.address.name if user.address else None,
-                    "id": user.id,
-                    "role": user.role.name,
-                    "session": login_log.id,
-                }
-            )
-        else:
-            data.update(
-                {
-                    "email": user.email,
-                    "first_name": user.first_name,
-                    "last_name": user.last_name,
-                    "id": user.id,
-                    "address": user.address.id if user.address else None,
-                    "address_name": user.address.name if user.address else None,
-                    "role": None,
-                    "session": login_log.id,
-                }
-            )
+
+        data.update(
+            {
+                "email": user.email,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "id": user.id,
+                "session": login_log.id,
+            }
+        )
 
         return data

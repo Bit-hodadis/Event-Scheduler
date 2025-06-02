@@ -1,5 +1,5 @@
-asgiref==3.5.2
-Django>=3.2,<4.0
+asgiref>=3.8.1
+Django>=5.0
 django-cors-headers==3.13.0
 django-environ==0.9.0
 djangorestframework
@@ -20,7 +20,7 @@ python-telegram-bot>=20.0,<21.0
 openpyxl
 redis
 django-redis
-django-cacheops 
+django-cacheops
 django-mptt
 pyyaml
 ua-parser

@@ -60,7 +60,7 @@ ALLOWED_HOSTS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:4173",
+    "http://localhost:5173",
     "http://localhost:3000",
     "http://localhost",
     "https://4.176.2.187",
@@ -88,7 +88,7 @@ CORS_ALLOW_HEADERS = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    "http://localhost:4173",
+    "http://localhost:5173",
     "http://localhost",
     "https://4.176.2.187",
     "https://revenue.brothersit.dev",

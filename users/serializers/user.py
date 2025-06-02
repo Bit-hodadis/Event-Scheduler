@@ -15,8 +15,7 @@ class LatestUserStatusSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    role_name = serializers.CharField(source="role.name", read_only=True)
-    department_name = serializers.CharField(source="department.name", read_only=True)
+
     password = serializers.CharField(write_only=True)
     latest_status = serializers.SerializerMethodField()
     latest_status_history = serializers.SerializerMethodField()

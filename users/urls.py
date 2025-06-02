@@ -21,8 +21,8 @@ router = DefaultRouter()
 
 router.register(r"users", UsersViewset, basename="users")
 urlpatterns = [
-    path("login", LoginView.as_view(), name="login"),
-    path("signup", SignupView.as_view(), name="signup"),
+    path("auth/login", LoginView.as_view(), name="login"),
+    path("auth/signup", SignupView.as_view(), name="signup"),
     path("forget", PasswordResetRequestView.as_view(), name="forget"),
     path(
         "password-reset-confirm/<uidb64>/<token>/",

@@ -124,15 +124,18 @@ class AutoRefreshTokenMiddleware:
             url_name == "password-reset-confirm"
             or url_name == "auditlog-list"
             or url_name == "signup"
+            or url_name == "login"
             or request.path.startswith("/admin/login/")
             or request.path.startswith("/admin/")
             or request.path.startswith("/api/signup")
+            or request.path.startswith("/api/auth/signup")
             or request.path.startswith("/api/login")
+            or request.path.startswith("/api/auth/login")
             or request.path.startswith("/api/signup")
-            or request.path.startswith("/api/logout")
+            or request.path.startswith("/api/auth/logout")
             # or resolve(path=request.path).url_name in ["verify-email"]
         ):
-            print("response")
+            # print("response")
 
             return self.get_response(request)
         access_token = request.COOKIES.get("access_token")
