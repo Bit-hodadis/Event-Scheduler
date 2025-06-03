@@ -9,6 +9,8 @@ class Calendar(BaseModel):
     user = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE, related_name="calendars"
     )
+    color = models.CharField(max_length=10, null=True)
+    description = models.CharField(max_length=1000, blank=True)
 
     class Meta:
         unique_together = ("name", "user")

@@ -45,6 +45,7 @@ class AttachJWTTokenMiddleware:
             pass
         else:
             token = request.COOKIES.get("access_token")
+            print(token, " it is token")
 
             if token:
                 request.META["HTTP_AUTHORIZATION"] = f"Bearer {token}"
@@ -83,7 +84,7 @@ class AutoRefreshTokenMiddleware:
                 settings.SIMPLE_JWT["SIGNING_KEY"],
                 algorithms=[api_settings.ALGORITHM],
             )
-
+            print(payload, " it is payload")
             return payload
         except jwt.InvalidTokenError:
             return None
@@ -98,6 +99,7 @@ class AutoRefreshTokenMiddleware:
                 user = User.objects.get(id=user_id)
                 request.user = user
         except User.DoesNotExist:
+            print("it is in this Exception")
             request.user = None
 
     def is_active_user(self, payload):

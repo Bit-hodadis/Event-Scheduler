@@ -91,10 +91,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
     "http://localhost",
-    "https://4.176.2.187",
-    "https://revenue.brothersit.dev",
 ]
-X_FRAME_OPTIONS = "ALLOWALL"
+X_FRAME_OPTIONS = "ALLOW ALL"
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -244,7 +242,7 @@ CSRF_COOKIE_SAMESITE = "Lax"  # Use "None" if doing cross-origin requests
 STATIC_URL = "static/"
 MEDIA_ROOT = "/code/media"
 # MEDIA_URL = "/media/"
-MEDIA_URL = "https://revenue.brothersit.dev/media/"
+MEDIA_URL = "/media/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

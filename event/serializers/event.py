@@ -136,4 +136,4 @@ class EventSerializer(serializers.ModelSerializer):
 class CalendarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Calendar
-        fields = ["id", "name"]
+        fields = ["id", "name", "color", "description"]
