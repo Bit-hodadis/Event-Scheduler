@@ -29,7 +29,7 @@ urlpatterns = [
         PasswordResetConfirmView.as_view(),
         name="password_reset_confirm",
     ),
-    path("logout", LogoutView.as_view(), name="logout"),
+    path("auth/logout", LogoutView.as_view(), name="logout"),
     path("me", UserProfileViewSet.as_view({"get": "profile"}), name="profile"),
     path(
         "update-profile",

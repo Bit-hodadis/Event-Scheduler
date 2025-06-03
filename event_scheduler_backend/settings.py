@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "audit",
     "users",
     "rba",
+    "event",
 ]
 
 ALLOWED_HOSTS = [
