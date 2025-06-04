@@ -21,13 +21,13 @@ class RecurrenceWeekdaySerializer(serializers.ModelSerializer):
 class RecurrenceMonthDaySerializer(serializers.ModelSerializer):
     class Meta:
         model = RecurrenceMonthDay
-        fields = ["id", "day"]
+        fields = ["id", "day", "month"]
 
 
 class RecurrenceRelativeDaySerializer(serializers.ModelSerializer):
     class Meta:
         model = RecurrenceRelativeDay
-        fields = ["id", "weekday", "ordinal"]
+        fields = ["id", "weekday", "ordinal", "month"]
 
 
 class RecurrenceRuleSerializer(serializers.ModelSerializer):
@@ -134,6 +134,8 @@ class EventSerializer(serializers.ModelSerializer):
 
 
 class CalendarSerializer(serializers.ModelSerializer):
+    total_count = serializers.IntegerField(source="events.count", read_only=True)
+
     class Meta:
         model = Calendar
-        fields = ["id", "name", "color", "description"]
+        fields = ["id", "name", "color", "description", "total_count"]

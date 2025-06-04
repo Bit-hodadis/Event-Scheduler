@@ -3,6 +3,22 @@ from django.db import models
 from base_model.model import BaseModel
 from users.models import CustomUser
 
+MONTHS = [
+    ("JAN", "January"),
+    ("FEB", "Feberary"),
+    ("MAR", "March"),
+    ("APR", "April"),
+    ("MAY", "May"),
+    ("JUN", "JUNE"),
+    ("JUL", "July"),
+    ("AUG", "August"),
+    ("SEP", "September"),
+    ("OCT", "October"),
+    ("NOV", "November"),
+    ("DEC", "December"),
+    ("JUL", "July"),
+]
+
 
 class Calendar(BaseModel):
     name = models.CharField(max_length=100)
@@ -14,6 +30,10 @@ class Calendar(BaseModel):
 
     class Meta:
         unique_together = ("name", "user")
+
+    @property
+    def total_event_count(self):
+        return self.events.count()
 
 
 class Event(BaseModel):
@@ -88,8 +108,10 @@ class RecurrenceMonthDay(BaseModel):
     )
     day = models.IntegerField()  # 1–31
 
+    month = models.CharField(choices=MONTHS, null=True)
+
     class Meta:
-        unique_together = ("rule", "day")
+        unique_together = ("rule", "day", "month")
 
 
 class RecurrenceRelativeDay(BaseModel):
@@ -101,6 +123,7 @@ class RecurrenceRelativeDay(BaseModel):
     )
     weekday = models.CharField(max_length=2, choices=WEEKDAYS)
     ordinal = models.IntegerField(choices=ORDINAL_CHOICES)
+    month = models.CharField(choices=MONTHS, null=True)
 
     class Meta:
         unique_together = ("rule", "weekday", "ordinal")
